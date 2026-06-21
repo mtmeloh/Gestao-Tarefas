@@ -21,24 +21,6 @@ Atualizar tarefas
 Remover tarefas
 
 
-▶️ Como executar o projeto
-Pré-requisitos
-Java 17 ou superior
-Maven instalado
-Passos
-# clonar o repositório
-git clone https://github.com/seu-usuario/gestao-tarefas.git
-
-# entrar na pasta
-cd gestao-tarefas
-
-# rodar o projeto
-mvn spring-boot:run
-
-A aplicação ficará disponível em:
-http://localhost:8080
-
-
 📖 Swagger (Documentação da API)
 Após iniciar o projeto, acesse:
 http://localhost:8080/swagger-ui/index.html
