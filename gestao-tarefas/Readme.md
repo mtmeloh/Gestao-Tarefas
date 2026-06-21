@@ -21,10 +21,5 @@ Atualizar tarefas
 Remover tarefas
 
 
-📖 Swagger (Documentação da API)
-Após iniciar o projeto, acesse:
-http://localhost:8080/swagger-ui/index.html
-
-
 📄 Licença
 Este projeto está sob a licença MIT.
