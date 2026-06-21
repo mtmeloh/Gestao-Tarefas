@@ -1,0 +1,25 @@
+# --- Etapa 1: Compilação ---
+FROM eclipse-temurin:17-jdk-alpine AS build
+WORKDIR /app
+
+# Copiar os ficheiros do Maven Wrapper e o pom.xml do diretório atual
+COPY .mvn ./.mvn
+COPY mvnw mvnw.cmd pom.xml ./
+
+# Descarregar as dependências (ajuda a fazer cache e acelerar builds futuros)
+RUN ./mvnw dependency:go-offline
+
+# Copiar o código fonte e compilar
+COPY src ./src
+RUN ./mvnw clean package -DskipTests -Dmaven.test.skip=true
+
+# --- Etapa 2: Execução ---
+FROM eclipse-temurin:17-jre-alpine
+WORKDIR /app
+
+# Copiar o JAR gerado na etapa anterior
+COPY --from=build /app/target/*.jar app.jar
+
+EXPOSE 8080
+
+ENTRYPOINT ["java", "-jar", "app.jar"]
