@@ -14,11 +14,11 @@ Maven
 
 
 Funcionalidades:
-Criar tarefas
-Listar tarefas
-Buscar tarefa por ID
-Atualizar tarefas
-Remover tarefas
+Criar tarefas, 
+Listar tarefas,
+Buscar tarefa por ID, 
+Atualizar tarefas, 
+Remover tarefas 
 
 
 📄 Licença
